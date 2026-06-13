@@ -18,3 +18,9 @@ steps:
 
 - script: dotnet test
   displayName: "Run tests"
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'firrst'
+    appName: 'api-auth'
+    package: '$(Build.ArtifactStagingDirectory)'
